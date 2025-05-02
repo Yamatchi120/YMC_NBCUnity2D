@@ -5,8 +5,8 @@ using UnityEngine;
 public class Status : MonoBehaviour
 {
     [SerializeField] private int baseHp = 100;
-    [SerializeField] private float baseSpeed = 1f;
-    [SerializeField] private float baseJumpForce = 1f;
+    [SerializeField] private float baseSpeed = 5.0f;
+    [SerializeField] private float baseJumpForce = 3.0f;
 
     public int BaseHp
     {
