@@ -4,7 +4,18 @@ using UnityEngine;
 
 public class BaseController : MonoBehaviour
 {
-    protected virtual void Move() { }
+    protected Rigidbody2D rb;
+
+    protected Vector2 moveDirection = Vector2.zero;
+    public Vector2 MoveDirection { get { return moveDirection; } }
+    protected virtual void FixedUpdate()
+    {
+        Move();
+    }
+    protected virtual void Move()
+    {
+        
+    }
 
     protected virtual void Rotate() { }
 
