@@ -14,6 +14,10 @@ public class Status : MonoBehaviour
         get {  return baseHp; }
         set { baseHp = Mathf.Clamp(value, 0, 100); }
     }
-    public float BaseSpeed { get; set; }
+    public float BaseSpeed
+    {
+        get { return baseSpeed; }
+        set { baseSpeed = Mathf.Clamp(value, 0f, 10f); }
+    }
     public float BaseJumpForce { get; set; }
 }

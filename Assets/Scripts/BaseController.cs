@@ -5,9 +5,17 @@ using UnityEngine;
 public class BaseController : MonoBehaviour
 {
     protected Rigidbody2D rb;
+    protected Status status;
 
     protected Vector2 moveDirection = Vector2.zero;
     public Vector2 MoveDirection { get { return moveDirection; } }
+    
+    protected virtual void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        status = GetComponent<Status>();
+    }
+    
     protected virtual void FixedUpdate()
     {
         Move();
@@ -17,7 +25,7 @@ public class BaseController : MonoBehaviour
         
     }
 
-    protected virtual void Rotate() { }
+    protected virtual void Jump() { }
 
-    protected virtual void Jump(){ }
+    protected virtual void Rotate() { }
 }
