@@ -6,7 +6,7 @@ public class Status : MonoBehaviour
 {
     [SerializeField] private int baseHp = 100;
     [SerializeField] private float baseSpeed = 5.0f;
-    [SerializeField] private float baseJumpForce = 3.0f;
+    // [SerializeField] private float baseJumpForce = 3.0f;
 
     public int BaseHp
     {
@@ -19,5 +19,5 @@ public class Status : MonoBehaviour
         get { return baseSpeed; }
         set { baseSpeed = Mathf.Clamp(value, 0f, 10f); }
     }
-    public float BaseJumpForce { get; set; }
+    // public float BaseJumpForce { get; set; }
 }

@@ -6,6 +6,7 @@ public class BaseController : MonoBehaviour
 {
     protected Rigidbody2D rb;
     protected Status status;
+    protected Animator anim;
 
     protected Vector2 moveDirection = Vector2.zero;
     public Vector2 MoveDirection { get { return moveDirection; } }
@@ -14,6 +15,7 @@ public class BaseController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         status = GetComponent<Status>();
+        anim = GetComponentInChildren<Animator>();
     }
     
     protected virtual void FixedUpdate()
@@ -25,7 +27,6 @@ public class BaseController : MonoBehaviour
         
     }
 
-    protected virtual void Jump() { }
 
     protected virtual void Rotate() { }
 }
