@@ -2,16 +2,35 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    public GameObject targetObject;
+    public GameObject interactCircle;
+    public GameObject miniGamePanel;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Debug.Log("Press F");
+            miniGamePanel.SetActive(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("Press Escape");
+            miniGamePanel.SetActive(false);
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-            targetObject.SetActive(true);
+        {
+            interactCircle.SetActive(true);
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-            targetObject.SetActive(false);
+        {
+            interactCircle.SetActive(false);
+        }
     }
 }
