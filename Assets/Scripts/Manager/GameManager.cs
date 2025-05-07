@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
 
     // 인스턴스 보호
     public PlayerController player { get; private set; }
-    public Npc npc { get; private set; }
     private void Awake()
     {
         if(Instance == null)
