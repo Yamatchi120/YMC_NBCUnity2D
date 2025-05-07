@@ -33,7 +33,7 @@ public class PlayerController : BaseController
     {
         playerLastPos = transform.position;
 
-        
+        // 테스트용 player 위치 저장
         //if (Input.GetKeyDown(KeyCode.E))
         //{
         //    Debug.Log("Pressed E");
