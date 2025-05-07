@@ -9,13 +9,15 @@ public class Interactable : MonoBehaviour
     public GameObject talkPanel;
     public Text nextTalkTxt;
 
+    bool isPlayerInRange = false;
+
     private void Update()
     {
         NpcInteractable();
     }
     private void NpcInteractable()
     {
-        if(interactCircle == true)
+        if(isPlayerInRange == true)
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
@@ -33,17 +35,15 @@ public class Interactable : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            isPlayerInRange = true;
             interactCircle.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                talkPanel.SetActive(true);
-            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            isPlayerInRange = false;
             interactCircle.SetActive(false);
             talkPanel.SetActive(false);
         }

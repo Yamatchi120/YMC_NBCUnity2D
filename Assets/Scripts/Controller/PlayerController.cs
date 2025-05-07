@@ -8,16 +8,13 @@ public class PlayerController : BaseController
 {
     private GameManager gameManager;
 
-    Vector3 playerLastPos = Vector3.zero;
+    public Vector3 playerLastPos = Vector3.zero;
 
-    void Start()
-    {
-        
-    }
     public void Update()
     {
         PlayerSavePos();
     }
+    
     public void Init(GameManager gameManager)
     {
         this.gameManager = gameManager;
