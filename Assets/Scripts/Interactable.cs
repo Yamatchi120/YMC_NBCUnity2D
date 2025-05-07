@@ -1,32 +1,47 @@
+using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.UI;
+
+public enum NPC
+{
+    NPC_elf_f,
+    NPC_elf_m
+}
 
 public class Interactable : MonoBehaviour
 {
     public GameObject interactCircle;
-    public GameObject miniGamePanel;
+    GameObject TalkingPanel;
+    public Text nextTalkTxt;
 
+    private void Start()
+    {
+        
+    }
     private void Update()
+    {
+        NpcInteractable();
+    }
+    protected virtual void NpcInteractable()
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            Debug.Log("Press F");
-            miniGamePanel.SetActive(true);
+
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Debug.Log("Press Escape");
-            miniGamePanel.SetActive(false);
         }
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    protected virtual void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             interactCircle.SetActive(true);
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    protected virtual void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {

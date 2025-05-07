@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlappyTrap : MonoBehaviour
+public class TrapBase : MonoBehaviour
 {
     public float highPosY = 1f;
     public float lowPosY = -1f;
