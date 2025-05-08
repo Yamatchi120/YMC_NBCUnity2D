@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
@@ -8,13 +10,24 @@ public class PlayerController : BaseController
 {
     private GameManager gameManager;
 
+    Vector3 point;
     public Vector3 playerLastPos = Vector3.zero;
+    public Renderer renderer;
 
+    public void Start()
+    {
+        point = Camera.main.ScreenToWorldPoint(new
+                Vector3(Input.mousePosition.x,
+                Input.mousePosition.y,
+                -Camera.main.transform.position.z));
+    }
     public void Update()
     {
-        PlayerSavePos();
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log(point.ToString());
+        }
     }
-    
     public void Init(GameManager gameManager)
     {
         this.gameManager = gameManager;
@@ -28,6 +41,13 @@ public class PlayerController : BaseController
         rb.velocity = moveDirection * status.BaseSpeed;
 
         anim.SetBool("isRun", moveDirection != Vector2.zero);
+    }
+    protected override void Rotate()
+    {
+        if(point.x < 0)
+        {
+            
+        }
     }
     public void PlayerSavePos()
     {

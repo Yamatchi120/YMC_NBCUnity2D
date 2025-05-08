@@ -17,7 +17,7 @@ public class BaseController : MonoBehaviour
         status = GetComponent<Status>();
         anim = GetComponentInChildren<Animator>();
     }
-    
+
     protected virtual void FixedUpdate()
     {
         Move();
